@@ -39,6 +39,7 @@ public class LoginServlet extends HttpServlet {
         // B1: Lay du lieu tu jsp ve servlet => getParameter => Lay thong qua name
         String name = request.getParameter("a");
         String pass = request.getParameter("b");
+
         // B2: Truyen du lieu tu servlet => jsp
         request.setAttribute("x1",name);
         request.setAttribute("x2",pass);
