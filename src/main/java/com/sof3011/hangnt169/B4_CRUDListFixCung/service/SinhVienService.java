@@ -22,4 +22,17 @@ public class SinhVienService {
     public List<SinhVien> getAll() {
         return listSinhVien;
     }
+
+    public void addSinhVien(SinhVien sv) {
+        listSinhVien.add(sv);
+    }
+
+    public void xoaSinhVien(int index) {
+        listSinhVien.remove(index);
+    }
+
+    public SinhVien detailSinhVien(int index) {
+        return listSinhVien.get(index);
+    }
+
 }

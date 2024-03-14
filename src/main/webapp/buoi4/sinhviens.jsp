@@ -12,7 +12,7 @@
         <button type="submit">Search</button>
     </form>
     <br/>
-    <button><a href="">Add Student</a></button>
+    <button><a href="/sinh-vien/view-add">Add Student</a></button>
     <tr>
         <th>STT</th>
         <th>MSSV</th>
@@ -25,10 +25,19 @@
     </thead>
     <tbody>
 <%--    for(Doi tuong: ten mang)--%>
-    <c:forEach items="${abc}" var="sv">
+    <c:forEach items="${abc}" var="sv" varStatus="i">
         <tr>
-            <td>STT</td>
+            <td>${i.index}</td>
             <td>${sv.mssv}</td>
+            <td>${sv.ten}</td>
+            <td>${sv.tuoi}</td>
+            <td>${sv.gioiTinh}</td>
+            <td>${sv.diaChi}</td>
+            <td>
+                <a href="/sinh-vien/remove?viTri=${i.index}">Delete</a>
+                <a href="/sinh-vien/detail?viTri=${i.index}">Detail</a>
+                <a href="/sinh-vien/view-update?viTri=${i.index}">Update</a>
+            </td>
         </tr>
     </c:forEach>
     </tbody>
