@@ -29,39 +29,39 @@ public class CategoryRepository {
     // add
     public void add(Category1 c){
         try {
-            session.beginTransaction().begin(); // Mo ra 1 transation => Loi => rollback
+            session.getTransaction().begin(); // Mo ra 1 transation => Loi => rollback
             session.persist(c); // Add => persist
-            session.beginTransaction().commit();
+            session.getTransaction().commit();
         }catch (Exception e){
             e.printStackTrace();
             // Loi => co the rollback o day
-            session.beginTransaction().rollback();
+            session.getTransaction().rollback();
         }
     }
 
     // update
     public void update(Category1 c){
         try {
-            session.beginTransaction().begin(); // Mo ra 1 transation => Loi => rollback
+            session.getTransaction().begin(); // Mo ra 1 transation => Loi => rollback
             session.merge(c); // Update => merge
-            session.beginTransaction().commit();
+            session.getTransaction().commit();
         }catch (Exception e){
             e.printStackTrace();
             // Loi => co the rollback o day
-            session.beginTransaction().rollback();
+            session.getTransaction().rollback();
         }
     }
 
     // xoa
     public void xoa(Category1 c){
         try {
-            session.beginTransaction().begin(); // Mo ra 1 transation => Loi => rollback
+            session.getTransaction().begin(); // Mo ra 1 transation => Loi => rollback
             session.delete(c); // Delete => merge
-            session.beginTransaction().commit();
+            session.getTransaction().commit();
         }catch (Exception e){
             e.printStackTrace();
             // Loi => co the rollback o day
-            session.beginTransaction().rollback();
+            session.getTransaction().rollback();
         }
     }
 
